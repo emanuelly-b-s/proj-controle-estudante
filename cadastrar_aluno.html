@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Cadastrar Alunos</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow ">
+        <div class="container-fluid" style="align-items: center">
+            <h5 class="my-0 mr-md-auto font-weight-normal">
+                <span class="textgradient">Bosch</span>
+                <span style="color:#595959; font-weight: 500;">Engineering</span>
+                <span style="color:#595959; font-weight: 500;">Technical School</span>
+                |
+                <span style="color:#595959; font-weight: 650;">Controle de Estudantes</span>
+            </h5>
+
+            <div class=row col-sm-4 style=float:left>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <span class="p-3 text-dark" style="font-weight: 900;">Cadastrar:</span>
+                        <a class="p-3 text-dark" href="cadastrar_aluno.html">Alunos</a>
+                        <span class="p-3 text-dark" style="font-weight: 900;">|</span>
+                        <a class="p-3 text-dark" href="cadastrar_sala.html">Sala</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="qtd">
+        <select id="sala" onchange="this.form.submit()" name="nome">
+            <option>Selecione uma sala</option>
+            <% for (let i=0; i<salas.length; i++) { %>
+                <option value='<%= salas[i].IDSala %>'>
+                    <%= salas[i].Nome %>
+                </option>
+                <% } %>
+        </select>
+    </div>
+
+
+    <main>
+        <div class="cad-sala">
+            <form action="" method="post" enctype="multipart/form-data" class="row g-3">
+                <div class="col-12" id="foto">
+                    <input type="file" class="form-control" name="foto" id="my_file" accept="image/*">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Nome:</label>
+                    <input type="text" class="form-control" name="nome_aluno" id="nome_aluno">
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Idade:</label>
+                    <input type="text" class="form-control" name="idade" id="idade">
+                </div>
+                <div class="col-12">
+                    <label class="form-label">Sexo:</label>
+                    <select class="form-control" name="sala" id="sala">
+                        <option selected></option>
+                        <option value="Fem" name="Fem">Feminino</option>
+                        <option value="Masc" name="Masc">Masculino</option>
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <label class="form-label">Sala:</label>
+                    <select class="form-control" name="sala" id="sala">
+                        <option selected></option>
+                        <option value="" name="">Sala 11</option>
+
+                    </select>
+                </div>
+
+                <div class="col-12">
+                    <input class="form-control btn btn-outline-dark" type="submit" id="cadastrar" value="Cadastrar"
+                        name="cadastrar">
+                </div>
+            </form>
+        </div>
+    </main>
+
+
+
+    <div class="footer">
+        <div class="container-fluid">
+
+            <span>Bosch</span>
+            <span>Engineering</span>
+            <span>Technical School </span>
+
+        </div>
+    </div>
+</body>
+
+</html>

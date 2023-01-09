@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: 1s;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    margin: 0 2.5% 0 2%;
+
+}
+
+.textgradient {
+    display: inline;
+    background: linear-gradient(to right, #0094b4, #087bff, #bb23cf, #f61414);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.card {
+    padding: 1%;
+    margin: 0% 1.7em;
+    width: 20rem;
+    align-items: center;
+}
+
+.card-edit {
+    margin: 4% 2%;
+    width: 20rem;
+    align-items: center;
+}
+
+.card-footer {
+    padding: 0.5rem 0.5rem;
+    background-color: rgba(0, 0, 0, .03);
+    border-top: 1px solid rgba(0, 0, 0, .125);
+    width: 15rem;
+}
+
+.qtd {
+    text-align: end;
+    padding: 2em 2em 0 2em;
+}
+
+.footer {
+    background-color: #000000;
+    color: #F2FFFC;
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    opacity: 0.80;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    padding-left: 2%;
+    align-items: center;
+
+}
+
+.formulario {
+    margin-right: 0;
+    display: flex;
+    width: 50%;
+    align-items: center;
+    padding: 2% 3%;
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-flow: row wrap;
+    margin: 0 5% 2% 5%;
+}
+
+.cad-sala {
+    display: flex;
+    
+}
+
+.navbar {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0;
+}
+
+#card {
+    margin: 5%;
+}
+
+#card:hover {
+    transform: scale(1.1);
+    transition: .5s;
+}
+
+
+#foto
+{
+    display: flex;
+    justify-content: center;
+
+}
+
+#foto input
+{
+    background-image: url('img/user.png');
+    border-radius: 50%;
+    width: 15em;
+    height: 15em;
+    color: transparent;
+}
+
+#foto input::-webkit-file-upload-button
+{
+    visibility: hidden;
+}
+
+.card-img-top{
+    height: 15em;
+    overflow: hidden;
+ 
+}
