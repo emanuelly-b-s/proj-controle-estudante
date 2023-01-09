@@ -21,7 +21,7 @@ body {
 
 .textgradient {
     display: inline;
-    background: linear-gradient(to right, #0094b4, #087bff, #bb23cf, #f61414);
+    background: linear-gradient(to right, #EE281F, #633887, #009FD6, #7EC044);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -56,7 +56,7 @@ body {
 .footer {
     background-color: #000000;
     color: #F2FFFC;
-    padding: 1rem;
+    padding: 1rem 0.5rem;
     position: fixed;
     bottom: 0;
     width: 100%;
@@ -83,12 +83,12 @@ main {
     align-items: center;
     justify-content: space-around;
     flex-flow: row wrap;
-    margin: 0 5% 2% 5%;
+    margin: 2% 5% 2% 5%;
 }
 
 .cad-sala {
     display: flex;
-    
+
 }
 
 .navbar {
@@ -110,15 +110,13 @@ main {
 }
 
 
-#foto
-{
+#foto {
     display: flex;
     justify-content: center;
 
 }
 
-#foto input
-{
+#foto input {
     background-image: url('img/user.png');
     border-radius: 50%;
     width: 15em;
@@ -126,13 +124,12 @@ main {
     color: transparent;
 }
 
-#foto input::-webkit-file-upload-button
-{
+#foto input::-webkit-file-upload-button {
     visibility: hidden;
 }
 
-.card-img-top{
+.card-img-top {
     height: 15em;
     overflow: hidden;
- 
+
 }
