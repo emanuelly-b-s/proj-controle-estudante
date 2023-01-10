@@ -3,9 +3,9 @@ body {
     padding: 0;
 }
 
-.card:hover {
-    transform: scale(1.05);
-    transition: 1s;
+.card-img-top:hover {
+    transform: scale(1.08);
+    transition: 0.8s;
 }
 
 .container,
@@ -21,7 +21,7 @@ body {
 
 .textgradient {
     display: inline;
-    background: linear-gradient(to right, #EE281F, #633887, #009FD6, #7EC044);
+    background: linear-gradient(to right, #D91424, #8C3A87, #034C8C, #04C4D9, #03A65A);
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
     background-clip: text;
@@ -31,7 +31,7 @@ body {
 .card {
     padding: 1%;
     margin: 0% 1.7em;
-    width: 20rem;
+    width: 18rem;
     align-items: center;
 }
 
@@ -43,10 +43,12 @@ body {
 
 .card-footer {
     padding: 0.5rem 0.5rem;
-    background-color: rgba(0, 0, 0, .03);
-    border-top: 1px solid rgba(0, 0, 0, .125);
     width: 15rem;
+    border-color: #D91424;
+    background-color: transparent;
 }
+
+
 
 .qtd {
     text-align: end;
@@ -81,9 +83,9 @@ body {
 main {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     flex-flow: row wrap;
-    margin: 2% 5% 2% 5%;
+    margin: 2% 5% 8% 5%;
 }
 
 .cad-sala {
@@ -101,35 +103,57 @@ main {
 }
 
 #card {
-    margin: 5%;
+    margin: 2%;
 }
 
 #card:hover {
     transform: scale(1.1);
     transition: .5s;
+    margin: 3px;
 }
 
 
-#foto {
+#foto
+{
     display: flex;
     justify-content: center;
-
 }
 
-#foto input {
-    background-image: url('img/user.png');
+
+#foto img
+{
     border-radius: 50%;
-    width: 15em;
-    height: 15em;
-    color: transparent;
+    width: 17em;
+    height: 17em;
 }
 
-#foto input::-webkit-file-upload-button {
-    visibility: hidden;
+
+#foto input
+{
+    display: none;
 }
 
 .card-img-top {
+    margin-top: 2em;
+    border-radius: 50%;
+    width: 15em;
     height: 15em;
-    overflow: hidden;
 
+}
+
+.cad-aluno{
+    display: flex;
+    margin: 0% 30% 5% 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-outline-dark:hover{
+    background-color: #D91424;
+    border-color: #F2FFFC;
+}
+
+.btn{
+    border-color: #D91424;
+    color: #D91424;
 }
