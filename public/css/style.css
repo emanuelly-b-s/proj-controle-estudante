@@ -1,6 +1,7 @@
 body {
     margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .card-img-top:hover {
@@ -28,6 +29,24 @@ body {
     font-weight: 700;
 }
 
+
+.qtd_select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+a:hover {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
+}
+
+
 .card {
     padding: 1%;
     margin: 0% 1.7em;
@@ -35,24 +54,29 @@ body {
     align-items: center;
 }
 
-.card-edit {
-    margin: 4% 2%;
-    width: 20rem;
-    align-items: center;
-}
 
 .card-footer {
     padding: 0.5rem 0.5rem;
     width: 15rem;
-    border-color: #D91424;
+    border-color: #034C8C;
     background-color: transparent;
 }
 
 
 
 .qtd {
-    text-align: end;
-    padding: 2em 2em 0 2em;
+    justify-content: end;
+    padding: 1em 2em 0 2em;
+    display: grid;
+}
+
+.qtd_select:focus {
+    border-top-color: #86B7FE;
+    border-bottom-color: #86B7FE;
+    border-left-color: #86B7FE;
+    border-right-color: rgb(134, 183, 254);
+    border-radius: 5px;
+    box-shadow: rgba(134, 183, 254, 0.5) 0px 0px 0px 3px;
 }
 
 .footer {
@@ -86,6 +110,15 @@ main {
     justify-content: center;
     flex-flow: row wrap;
     margin: 2% 5% 8% 5%;
+    
+}
+
+.cont-edit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    align-items: baseline;
 }
 
 .cad-sala {
@@ -113,6 +146,24 @@ main {
 }
 
 
+#fotoEdit img {
+    border-radius: 50%;
+    /* width: 17em; */
+    /* height: 17em; */
+}
+
+#fotoEdit
+{
+    display: flex;
+    justify-content: center;
+}
+
+
+#fotoEdit input
+{
+    display: none;
+}
+
 #foto
 {
     display: flex;
@@ -135,9 +186,13 @@ main {
 
 .card-img-top {
     margin-top: 2em;
-    border-radius: 50%;
     width: 15em;
     height: 15em;
+    border: double 2.5px transparent;
+    border-radius: 50%;
+    background-image: linear-gradient(#D91424, #D91424), radial-gradient(circle at top right, #D91424, #8C3A87, #005691, #04C4D9, #03A65A);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
 }
 
@@ -146,14 +201,57 @@ main {
     margin: 0% 30% 5% 30%;
     align-items: center;
     justify-content: center;
+    text-align: center;
+}
+
+.editAluno{
+    display: flex;
+    margin: 0% 35% 5% 35%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #FFFFFF;
+
 }
 
 .btn-outline-dark:hover{
-    background-color: #D91424;
+    background-color: #005691;
     border-color: #F2FFFC;
 }
 
 .btn{
-    border-color: #D91424;
-    color: #D91424;
+    border-color: #005691;
+    color: #005691;
+}
+
+.custom-select{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.custom-option{
+    width: 5em;
+    border-color: #c1c1c1;
+    border-radius: 0.5rem;
+    justify-items: center;
+    text-align: center;
+}
+
+#editar
+{
+    background-color: #FFFFFF;
+    position: fixed;
+    display:none;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+
+
+#editar a
+{
+    width: 10em;
 }

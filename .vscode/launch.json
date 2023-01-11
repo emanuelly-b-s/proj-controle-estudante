@@ -1,0 +1,14 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Open index.ejs",
+            "file": "s:\\COM\\Human_Resources\\01.Engineering_Tech_School\\02.Internal\\10 - Aprendizes\\14 - Desenvolvimento de sistemas 2022\\Emanuelly Silva\\WEB\\PROJETO CONTROLE ESTUDANTES\\src\\views\\index.ejs"
+        }
+    ]
+}
