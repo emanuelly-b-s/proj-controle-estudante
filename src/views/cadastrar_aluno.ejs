@@ -39,25 +39,22 @@
         </div>
     </nav>
     <div class="qtd">
-        <label for="qtd_select"> Salas de aula: </label>
-        <select class="qtd_select">
-            <option name="qtd_option" value="">11</option>
-            <option name="qtd_option" value="">11</option>
-            <option name="qtd_option" value="">11</option>
-            <option name="qtd_option" value="">11</option>
-            <option name="qtd_option" value="">11</option>
+        <label class="custom-select" for="qtd_select"> Sala de aula: </label>
+        <select class="custom-option">
+            <option name="qtd_option" value="">Sala Digital Ct 401</option>
+            <option name="qtd_option" value="">Sala Aula Ct 401</option>
+            <option name="qtd_option" value="">Sala Digital Ct 101</option>
         </select>
+        <span class="focus"></span>
     </div>
-
-
     <main>
         <div class="cad-aluno">
             <form action="" method="post" enctype="multipart/form-data" class="row g-3">
                 <div class="col-12" id="foto">
                     <img src="img/user.jpg" id="imgFoto">
-                    <input type="file" class="form-control" name="foto" id="flImage"" accept="image/*">
+                    <input type="file" class="form-control" name="foto" id="flImage"" accept=" image/*">
                 </div>
-                            
+
                 <div class="col-12">
                     <label class="form-label">Nome:</label>
                     <input type="text" class="form-control" name="nome_aluno" id="nome_aluno">
@@ -65,8 +62,7 @@
 
                 <div class="col-12">
                     <label class="form-label">Idade:</label>
-                    <input type="number" class="form-control" min="16"
-                    max="24" name="idade" id="idade">
+                    <input type="number" class="form-control" min="16" max="24" name="idade" id="idade">
                 </div>
                 <div class="col-12">
                     <label class="form-label">Sexo:</label>
@@ -76,20 +72,17 @@
                         <option value="Masc" name="Masc">Masculino</option>
                     </select>
                 </div>
-
-                <div class="col-12">
+                <div class="qtd-center">
                     <label class="custom-select" for="qtd_select"> Sala de aula: </label>
                     <select class="custom-option">
-                        <option name="qtd_option" value="">11</option>
-                        <option name="qtd_option" value="">11</option>
-                        <option name="qtd_option" value="">11</option>
-                        <option name="qtd_option" value="">11</option>
-                        <option name="qtd_option" value="">11</option>
+                        <option name="qtd_option" value="">Sala Digital Ct 401</option>
+                        <option name="qtd_option" value="">Sala Aula Ct 401</option>
+                        <option name="qtd_option" value="">Sala Digital Ct 101</option>
                     </select>
+                    <span class="focus"></span>
                 </div>
-
                 <div class="col-12">
-                    <input class="form-control btn btn-outline-dark" type="submit" id="cadastrar" value="Cadastrar"
+                    <input class="form-control btn btn-outline-dark" id="cadastroAluno" type="submit" id="cadastrar" value="Cadastrar"
                         name="cadastrar">
                 </div>
             </form>

@@ -34,6 +34,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+
+
+}
+
+a {
+    text-decoration: none;
 }
 
 a:hover {
@@ -63,11 +69,21 @@ a:active {
 }
 
 
+.qtd-center{
+    justify-content: center;
+    padding: 0.5em 2em 0 2em;
+    display: grid;
+    align-items: center;
+    align-content: center;
+    margin-top: 0;
+}
+
 
 .qtd {
     justify-content: end;
     padding: 1em 2em 0 2em;
     display: grid;
+    
 }
 
 .qtd_select:focus {
@@ -109,7 +125,7 @@ main {
     align-items: center;
     justify-content: center;
     flex-flow: row wrap;
-    margin: 2% 5% 8% 5%;
+    margin: 2% 5% 15vh 5%;
     
 }
 
@@ -123,6 +139,8 @@ main {
 
 .cad-sala {
     display: flex;
+    text-align: center;
+    margin: auto;
 
 }
 
@@ -206,7 +224,7 @@ main {
 
 .editAluno{
     display: flex;
-    margin: 0% 35% 5% 35%;
+    margin: 1% 2% 2% 2%;
     align-items: center;
     justify-content: center;
     text-align: center;
@@ -232,7 +250,7 @@ main {
 }
 
 .custom-option{
-    width: 5em;
+    width: auto;
     border-color: #c1c1c1;
     border-radius: 0.5rem;
     justify-items: center;
@@ -242,11 +260,14 @@ main {
 #editar
 {
     background-color: #FFFFFF;
-    position: fixed;
+    position: absolute;
     display:none;
     align-items: center;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 22px 70px 4px;
+    width: 30%;
+    margin: auto auto 20vh auto;
+    border-radius: 20px;
 }
 
 
@@ -254,4 +275,12 @@ main {
 #editar a
 {
     width: 10em;
+}
+
+#cadastroAluno{
+    width: 40%;
+}
+#cadastroSala{
+    width: 40%;
+    margin: 2px 30% 2px 30%;
 }

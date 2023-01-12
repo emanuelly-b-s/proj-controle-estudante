@@ -1,6 +1,9 @@
 function editar() {
     let editar = document.getElementById("editar");
-    editar.style.cssText = "display:flex;" + "z-index: 1111;";
+    editar.style.cssText = "display:flex;" + "z-index: 1;";
+
+    // let rodape = document.getElementById("footer");
+    // editar.style.cssText = "z-index: -1;"
 
     let cont = document.getElementById("main");
     cont.style.cssText = "filter: blur(5px);";
