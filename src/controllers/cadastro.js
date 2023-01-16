@@ -31,6 +31,13 @@ module.exports = {
         const dados = req.body;
         // Nome padrão da foto
         let foto = 'usuario.png';
+        // Nome padrão da foto
+        // Verificando se foi enviada alguma foto
+        if (req.file) {
+            // Pegar novo nome da foto
+            foto = req.file.filename;
+        }
+
         // Criando aluno no banco de dados
         await aluno.create({
             Nome: dados.nome,
@@ -39,7 +46,30 @@ module.exports = {
             IDSala: dados.sala,
             Foto: foto
         });
+
         // Redirecionar para a página principal
         res.redirect('/');
     },
+    async editAluno(req, res) {
+        const dados = req.body;
+        // Nome padrão da foto
+        let foto = 'usuario.png';
+        // Criando aluno no banco de dados
+        await aluno.alter({
+            Nome: dados.nome,
+            Idade: dados.idade,
+            Sexo: dados.sexo,
+            IDSala: dados.sala,
+            Foto: foto
+        });
+        res.render('/');
+    },
+    async cadAluno(req, res) {
+        res.render('../views/cadastrar_aluno', {
+            salas: await sala.findAll()
+        })
+    },
+    async cadSala(req, res) {
+        res.render('../views/cadastrar_sala')
+    }
 };

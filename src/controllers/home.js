@@ -3,17 +3,24 @@ const aluno = require('../model/aluno');
 
 module.exports = {
     async pagInicialGet(req, res) {
-        res.render('../views/index');
+        const salas = await sala.findAll({
+            raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
+            attributes: ["IDSala", "Nome"],
+        });
+        res.render('../views/index', { salas, id: '' });
+
     },
-    async cadAluno(req, res) {
-        res.render('../views/cadastrar_aluno', {
-            salas: await sala.findAll()
-        })
+    async pagInicialPost(req, res) {
+
+        const id = req.body.nome;
+        const alunos = await aluno.findAll({
+            raw: true,
+            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto'],
+            where: { IDSala: id }
+        });
+        const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
+        res.render('../views/index', {salas, alunos: '', id: ''});
     },
-    async cadSala(req, res) {
-        res.render('../views/cadastrar_sala')
-    },
-    async editAluno(req, res) {
-        res.render('../views/editar_card_aluno')
-    },
+
+
 }

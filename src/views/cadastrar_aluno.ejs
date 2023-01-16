@@ -41,7 +41,7 @@
 
     <main>
         <div class="cad-aluno">
-            <form action="insertAluno" method="post" class="row g-3">
+            <form action="insertAluno" method="post" class="row g-3" enctype="multipart/form-data">
                 <div class="col-12" id="foto">
                     <img src="img/user.jpg" id="imgFoto">
                     <input type="file" class="form-control" name="foto" id="flImage"" accept=" image/*">
@@ -64,16 +64,15 @@
                         <option value="Masc" name="Masc">Masculino</option>
                     </select>
                 </div>
-                <div class="qtd">
-                    <label>Sala</label>
-                    <select id="sala" >
+                <div class="qtd-center">
+                    <label class="custom-select">Sala</label>
+                    <select  class="custom-option" id="sala" >
                         <% for (let i=0; i< salas.length; i++) { %>
                             <option value='<%= salas[i].IDSala %>'>
                                 <%= salas[i].Nome %>
                             </option>
                             <% } %>
                     </select>
-        
                 </div>
                 <div class="col-12">
                     <input class="form-control btn btn-outline-dark" id="cadastroAluno" type="submit" id="cadastrar"
