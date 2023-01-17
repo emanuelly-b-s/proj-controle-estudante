@@ -41,13 +41,14 @@
     <main>
         <div class="editar" id="editar">
             <div class="editAluno">
-                <form action="/editarAluno/<%= alunos.IDAluno %>" method="post" class="row g-3">
+                <form action="/editarAluno/<%= alunos.IDAluno %>" method="post" class="row g-3" enctype="multipart/form-data">
                     <h4>
                         <%= alunos.Nome %>
                     </h4>
-                    <div class="col-12" id="fotoEdit">
-                        <img src="/img/<%= alunos.Foto %>" class="card-img-top">
-                        <input type="file" class="form-control" id="flImage" name="foto" accept="image/*">
+
+                    <div class="col-12" id="foto">
+                        <img src="/img/<%= alunos.Foto %>" id="imgFoto">
+                        <input type="file" class="form-control" name="foto" id="flImage" accept=" image/*">
                     </div>
                     <div class="col-12">
                         <label class="form-label">Nome:</label>
@@ -91,6 +92,7 @@
             <span>Technical School </span>
         </div>
     </div>
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 
 </html>
