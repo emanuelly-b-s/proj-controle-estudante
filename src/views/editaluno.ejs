@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +11,8 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <title>Cadastrar Alunos</title>
+
+    <title>Editar</title>
 </head>
 
 <body>
@@ -24,69 +26,71 @@
                 |
                 <span style="color:#595959; font-weight: 650;">Controle de Estudantes</span>
             </h5>
+
             <div class=row col-sm-4 style=float:left>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <span class="p-3 text-dark" style="font-weight: 900;">Cadastrar:</span>
-                        <a class="p-3 text-dark" href="/cadastrar_aluno/">Alunos</a>
+                        <a class="p-3 text-dark" href="/cadastrar_aluno">Alunos</a>
                         <span class="p-3 text-dark" style="font-weight: 900;">|</span>
                         <a class="p-3 text-dark" href="/cadastrar_sala/">Sala</a>
                     </div>
                 </div>
             </div>
-        </div>
     </nav>
     <main>
-        <<div class="editar" id="editar">
+        <div class="editar" id="editar">
             <div class="editAluno">
-                <form action="insertAluno" method="post" class="row g-3" enctype="multipart/form-data">
-                    <div class="col-12" id="foto">
-                        <img src="/img/user.jpg" id="imgFoto">
-                        <input type="file" class="form-control" name="foto" id="flImage"" accept=" image/*">
+                <form action="/editarAluno/<%= alunos.IDAluno %>" method="post" class="row g-3">
+                    <h4>
+                        <%= alunos.Nome %>
+                    </h4>
+                    <div class="col-12" id="fotoEdit">
+                        <img src="/img/<%= alunos.Foto %>" class="card-img-top">
+                        <input type="file" class="form-control" id="flImage" name="foto" accept="image/*">
                     </div>
                     <div class="col-12">
                         <label class="form-label">Nome:</label>
-                        <input type="text" class="form-control" name="nome" id="nome_aluno">
+                        <input type="text" value="<%= alunos.Nome %>" class="form-control" name="nome">
                     </div>
                     <div class="col-12">
                         <label class="form-label">Idade:</label>
-                        <input type="number" class="form-control" min="16" max="24" name="idade">
+                        <input type="number" value="<%= alunos.Idade %>" class="form-control" min="16" max="24"
+                            name="idade" id="idade">
                     </div>
                     <div class="col-12">
                         <label class="form-label">Sexo:</label>
-                        <select class="form-control" name="sexo">
+                        <select value="<%= alunos.Sexo %>" class="form-control" name="sexo">
                             <option selected></option>
                             <option value="Fem" name="Fem">Feminino</option>
                             <option value="Masc" name="Masc">Masculino</option>
                         </select>
                     </div>
-                    <div class="qtd-center">
-                        <label class="custom-select">Sala</label>
-                        <select class="custom-option" id="sala" name="sala">
-                            <% for (let i=0; i< salas.length; i++) { %>
-                                <option value='<%= salas[i].IDSala %>'>
+                    <div class="col-12 my-4">
+                        <label class="form-label">Sala:</label>
+                        <select id="sala" name="sala" class="form-control" id="sala">
+                            <% for (let i=0; i<salas.length; i++) { %>
+                                <option value='<%= salas[i].IDSala %>' <%=alunos.IDSala==salas[i].IDSala ? 'selected'
+                                    : '' %>>
                                     <%= salas[i].Nome %>
                                 </option>
                                 <% } %>
                         </select>
                     </div>
                     <div class="col-12">
-                        <input class="form-control btn btn-outline-dark" id="cadastroAluno" type="submit" id="cadastrar"
-                            value="Cadastrar" name="cadastrar">
+                        <input class="btn btn-outline-dark" value="Atualizar" type="submit" name="editar">
                     </div>
                 </form>
             </div>
-            </div>
+        </div>
     </main>
-    <div class="footer">
+    <div class="footer" id="footer">
         <div class="container-fluid">
-
             <span class="textgradient">Bosch</span>
             <span>Engineering</span>
             <span>Technical School </span>
         </div>
     </div>
-    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 
 </html>

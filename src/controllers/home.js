@@ -7,10 +7,11 @@ module.exports = {
             raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
             attributes: ["IDSala", "Nome"],
         });
-        res.render('../views/index', { salas, id: '' });
+        res.render('../views/index', { salas, alunos: [], id: '' });
 
     },
     async pagInicialPost(req, res) {
+        console.log("POST home")
 
         const id = req.body.nome;
         const alunos = await aluno.findAll({
@@ -19,7 +20,7 @@ module.exports = {
             where: { IDSala: id }
         });
         const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
-        res.render('../views/index', {salas, alunos: '', id: ''});
+        res.render('../views/index', { salas, alunos, id });
     },
 
 

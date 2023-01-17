@@ -11,7 +11,7 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/node_modules/bootstrap/scss/bootstrap" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
     <script type="text/javascript" src="js/script.js"></script>
     <title>Controle</title>
 </head>
@@ -42,92 +42,48 @@
     </nav>
     <div class="qtd">
         <label class="custom-select">Sala</label>
-        <select class="custom-option" id="sala">
-            <<% for (let i=0; i< salas.length; i++) { %>
-                <option <%= value=salas[i].IDSala %> <%= id == salas[i].IDSala ? 'selected' : '' %>>
-                    <%= salas[i].Nome %>
-                </option>
-                <% } %>
-        </select>
-    </div>
-    <div class="cont-edit">
-        <div class="editar" id="editar">
-            <div class="editAluno">
-                <form action="/editarAluno/" method="post" class="row g-3" enctype="multipart/form-data">
-                    <h4>Nome</h4>
-                    <div class="col-12" id="fotoEdit">
-                        <img src="img/user.png" id="imgFoto">
-                        <input type="file" class="form-control" id="flImage" name="foto" accept="image/*">
-                    </div>
-
-                    <div class="col-12">
-                        <label class="form-label">Nome:</label>
-                        <input type="text" value="<%= alunos.Nome %>" class="form-control" name="nome">
-                    </div>
-
-                    <div class="col-12">
-                        <label class="form-label">Idade:</label>
-                        <input type="number" value="<%= alunos.Idade %>" class="form-control" min="16" max="24" name="idade" id="idade">
-                    </div>
-                    <div class="col-12">
-                        <label class="form-label">Sexo:</label>
-                        <select  value="<%= alunos.Sexo %>" class="form-control" name="sexo">
-                            <option selected></option>
-                            <option value="Fem" name="Fem">Feminino</option>
-                            <option value="Masc" name="Masc">Masculino</option>
-                        </select>
-                    </div>
-                    <div class="qtd-center">
-                        <label class="custom-select">Sala</label>
-                    <select class="custom-option" id="sala">
-                        <% for (let i=0; i< salas.length; i++) { %>
-                            <option <%= value=salas[i].IDSala %> <%= id == salas[i].IDSala ? 'selected' : '' %>>
-                                <%= salas[i].Nome %>
-                            </option>
-                            <% } %>
-                    </select>
-                        <span class="focus"></span>
-                    </div>
-                    <div class="col-12">
-                        <input class="btn btn-outline-dark" value="Atualizar" type="submit" name="editar">Editar</a>
-                        <a class="btn btn-outline-dark" id="cancelEdit" onclick="sair()">Cancelar</a>
-                    </div>
-
-                </form>
-            </div>
-        </div>
+        <form action="/" method="post">
+            <select id="sala" onchange="this.form.submit()" name="nome" class="custom-option">
+                <option name="qtd_option" value="" selected>Selecione</option>
+                <% for (let i=0; i< salas.length; i++) { %>
+                    <option value='<%=salas[i].IDSala %>' <%=id==salas[i].IDSala ? 'selected' : '' %>>
+                        <%= salas[i].Nome %>
+                    </option>
+                    <% } %>
+            </select>
+        </form>
     </div>
     <main id="main">
-        <% for (let i=0; i<alunos.length; i++) { %>
-        <div class="row">
-            <div class="card card-dash text-center border-light mb-3 ml-4 shadow col-sm-2">
-                <img src="img/ <%= alunos[i].Foto %>" < class="card-img-top">
-                <div class="card-body">
-                    <h6 class="card-text">
-                        <%= alunos[i].Nome %>
-                    </h6>
-                    <p class="card-text">
-                        <%= alunos[i].Idade %>
-                    </p>
-                    <p class="card-text">
-                        <%= alunos[i].Sexo %>
-                    </p>
-                </div>
-                <div class="card-footer text-muted">
-                    <a class="btn btn-outline-dark" onclick="editar()">
-                        <span>Editar</span>
-                    </a>
+        <% for (let i=0; i < alunos.length; i++) { %>
+            <div class="row">
+                <div class="card card-dash text-center border-light mb-3 ml-4 shadow col-sm-2">
+                    <img src="img/<%= alunos[i].Foto %>" class="card-img-top">
+                    <div class="card-body">
+                        <h5 class="card-text">
+                            <%= alunos[i].Nome %>
+                        </h5>
+                            <h6 class="card-text">
+                                <%= alunos[i].Idade %>
+                            </h6>
+                        <p class="card-text">
+                            <%= alunos[i].Sexo %>
+                        </p>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get" id="edit">
+                            <input type="submit" class="btn btn-outline-dark" value="Editar">
+                            </input>
+                        </form>
+                    </div>
                 </div>
             </div>
-        </div>
-
+            <% } %>
     </main>
     <div class="footer" id="footer">
         <div class="container-fluid">
             <span class="textgradient">Bosch</span>
             <span>Engineering</span>
             <span>Technical School </span>
-
         </div>
     </div>
     <script src="js/pop.js"></script>

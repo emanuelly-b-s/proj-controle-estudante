@@ -30,7 +30,7 @@ body {
 }
 
 
-.qtd_select{
+.qtd_select {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,9 +45,11 @@ a {
 a:hover {
     text-decoration: none;
 }
+
 a:visited {
     text-decoration: none;
 }
+
 a:active {
     text-decoration: none;
 }
@@ -69,7 +71,7 @@ a:active {
 }
 
 
-.qtd-center{
+.qtd-center {
     justify-content: center;
     padding: 0.5em 2em 0 2em;
     display: grid;
@@ -83,7 +85,7 @@ a:active {
     justify-content: end;
     padding: 1em 2em 0 2em;
     display: grid;
-    
+
 }
 
 .qtd_select:focus {
@@ -126,7 +128,7 @@ main {
     justify-content: center;
     flex-flow: row wrap;
     margin: 2% 5% 15vh 5%;
-    
+
 }
 
 .cont-edit {
@@ -170,35 +172,30 @@ main {
     /* height: 17em; */
 }
 
-#fotoEdit
-{
+#fotoEdit {
     display: flex;
     justify-content: center;
 }
 
 
-#fotoEdit input
-{
+#fotoEdit input {
     display: none;
 }
 
-#foto
-{
+#foto {
     display: flex;
     justify-content: center;
 }
 
 
-#foto img
-{
+#foto img {
     border-radius: 50%;
     width: 17em;
     height: 17em;
 }
 
 
-#foto input
-{
+#foto input {
     display: none;
 }
 
@@ -214,7 +211,7 @@ main {
 
 }
 
-.cad-aluno{
+.cad-aluno {
     display: flex;
     margin: 0% 30% 5% 30%;
     align-items: center;
@@ -222,7 +219,7 @@ main {
     text-align: center;
 }
 
-.editAluno{
+.editAluno {
     display: flex;
     margin: 1% 2% 2% 2%;
     align-items: center;
@@ -232,24 +229,24 @@ main {
 
 }
 
-.btn-outline-dark:hover{
+.btn-outline-dark:hover {
     background-color: #005691;
     border-color: #F2FFFC;
 }
 
-.btn{
+.btn {
     border-color: #005691;
     color: #005691;
 }
 
-.custom-select{
+.custom-select {
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-.custom-option{
+.custom-option {
     width: auto;
     border-color: #c1c1c1;
     border-radius: 0.5rem;
@@ -257,14 +254,11 @@ main {
     text-align: center;
 }
 
-#editar
-{
+#editar {
     background-color: #FFFFFF;
-    position: absolute;
-    display:none;
     align-items: center;
     flex-direction: column;
-    box-shadow: rgba(0, 0, 0, 0.45) 0px 22px 70px 4px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     width: 30%;
     margin: auto auto 20vh auto;
     border-radius: 20px;
@@ -272,15 +266,15 @@ main {
 
 
 
-#editar a
-{
+#editar a {
     width: 10em;
 }
 
-#cadastroAluno{
+#cadastroAluno {
     width: 40%;
 }
-#cadastroSala{
+
+#cadastroSala {
     width: 40%;
     margin: 2px 30% 2px 30%;
 }

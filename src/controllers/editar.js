@@ -7,7 +7,10 @@ const sala = require('../model/sala');
 const fs = require('fs');
 
 module.exports = {
-    async alunos(req, res){
+    async sala(req, res) {
+        res.render('../views/cadastrar_sala')
+    },
+    async alunos(req, res) {
 
         // Recebendo o id da URL
         const parametro = req.params.id;
@@ -18,12 +21,12 @@ module.exports = {
         });
 
         const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
-        
-        res.render('../views/index', {salas, alunos});
+
+        res.render('../views/editaluno', { salas, alunos, id: '' });
 
     },
 
-    async adicionar(req, res){
+    async adicionar(req, res) {
 
         const dados = req.body;
         const id = req.params.id;
@@ -40,14 +43,14 @@ module.exports = {
             });
 
             // Excluindo a foto da pasta
-            if (antigaFoto[0].Foto != 'usuario.png') fs.unlink(`public/img/${antigaFoto[0].Foto}`, ( err => { if(err) console.log(err); } ));
+            if (antigaFoto[0].Foto != 'usuario.png') fs.unlink(`public/img/${antigaFoto[0].Foto}`, (err => { if (err) console.log(err); }));
 
             // Update da nova foto no DB
             await aluno.update(
-                {Foto: req.file.filename},
-                {where: { IDAluno: id }}
+                { Foto: req.file.filename },
+                { where: { IDAluno: id } }
             );
-            
+
         }
 
         // Dando upgrade nas informações novas
@@ -57,11 +60,11 @@ module.exports = {
             Sexo: dados.sexo,
             IDSala: dados.sala
         },
-        {
-            where: { IDAluno: id }
-        });
+            {
+                where: { IDAluno: id }
+            });
 
         res.redirect('/');
-        
+
     }
 }

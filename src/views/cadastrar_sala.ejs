@@ -10,12 +10,12 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
         crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
     <title>Cadastrar Salas</title>
 </head>
 
 <body>
-    <div style="background-image: url(img/1529906317362.jfif); width: 100%; height: 15px;"></div>
+    <div style="background-image: url(../img/1529906317362.jfif); width: 100%; height: 15px;"></div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom shadow ">
         <div class="container-fluid" style="align-items: center">
             <h5 class="my-0 mr-md-auto font-weight-normal">
@@ -25,49 +25,44 @@
                 |
                 <span style="color:#595959; font-weight: 650;">Controle de Estudantes</span>
             </h5>
-
             <div class=row col-sm-4 style=float:left>
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                     <div class="navbar-nav">
                         <span class="p-3 text-dark" style="font-weight: 900;">Cadastrar:</span>
-                        <a class="p-3 text-dark" href="cadastrar_aluno">Alunos</a>
+                        <a class="p-3 text-dark" href="/cadastrar_aluno/">Alunos</a>
                         <span class="p-3 text-dark" style="font-weight: 900;">|</span>
-                        <a class="p-3 text-dark" href="cadastrar_sala">Sala</a>
+                        <a class="p-3 text-dark" href="/cadastrar_sala/">Sala</a>
                     </div>
                 </div>
             </div>
         </div>
     </nav>
-  
     <main>
-        <div class="cad-sala">
-            <form action="/insertSala/" method="post"  class="row g-3">
-                <div class="col-12">
-                    <label class="form-label">Nome:</label>
-                    <input type="text" class="form-control" name="nome" >
-                </div>
+        <div class="editar" id="editar">
+            <div class="editAluno">
+                <form action="/insertSala/" method="post" class="row g-3">
+                    <div class="col-12">
+                        <label class="form-label">Nome:</label>
+                        <input type="text" class="form-control" name="nome">
+                    </div>
 
-                <div class="col-12">
-                    <label class="form-label">Capacidade:</label>
-                    <input type="number" class="form-control" min="0" max="22" name="capacidade" >
-                </div>
-                <div class="col-12">
-                    <input class="form-control btn btn-outline-dark" id="cadastroSala" type="submit" 
-                        value="Cadastrar" name="cadastrar">
-                </div>
-            </form>
+                    <div class="col-12">
+                        <label class="form-label">Capacidade:</label>
+                        <input type="number" class="form-control" min="0" max="22" name="capacidade">
+                    </div>
+                    <div class="col-12">
+                        <input class="form-control btn btn-outline-dark" id="cadastroSala" type="submit"
+                            value="Cadastrar" name="cadastrar">
+                    </div>
+                </form>
+            </div>
         </div>
-
     </main>
-
-
     <div class="footer">
         <div class="container-fluid">
-
             <span class="textgradient">Bosch</span>
             <span>Engineering</span>
             <span>Technical School </span>
-
         </div>
     </div>
 </body>

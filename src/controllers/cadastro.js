@@ -29,6 +29,7 @@ module.exports = {
     async alunoInsert(req, res) {
         // Recebendo as informações pelo Body
         const dados = req.body;
+        console.log(dados);
         // Nome padrão da foto
         let foto = 'usuario.png';
         // Nome padrão da foto
