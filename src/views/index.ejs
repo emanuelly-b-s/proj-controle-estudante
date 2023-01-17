@@ -53,6 +53,11 @@
             </select>
         </form>
     </div>
+    <div class="qtd">
+        <form action="/editarSala/<%= salas.IDSala %>" method="get" id="edit">
+            <input type="submit" class="btn btn-outline-dark" value="Editar">
+        </form>
+    </div>
     <main id="main">
         <% for (let i=0; i < alunos.length; i++) { %>
             <div class="row">
@@ -62,9 +67,9 @@
                         <h5 class="card-text">
                             <%= alunos[i].Nome %>
                         </h5>
-                            <h6 class="card-text">
-                                <%= alunos[i].Idade %>
-                            </h6>
+                        <h6 class="card-text">
+                            <%= alunos[i].Idade %>
+                        </h6>
                         <p class="card-text">
                             <%= alunos[i].Sexo %>
                         </p>

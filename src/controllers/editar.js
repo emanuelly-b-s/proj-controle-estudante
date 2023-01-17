@@ -7,9 +7,35 @@ const sala = require('../model/sala');
 const fs = require('fs');
 
 module.exports = {
-    async sala(req, res) {
-        res.render('../views/cadastrar_sala')
+    async salas(req, res) {
+        const parametro = req.params.id;
+
+        console.log(parametro)
+
+        const salas = await sala.findByPk(parametro, {
+            raw: true,
+            attributes: ['IDSala', 'Nome', 'Capacidade']
+        });
+        res.render('../views/editsala', { salas });
     },
+
+    async editSala(req, res) {
+
+        const dados = req.body;
+        const id = req.params.id;
+
+        await sala.update({
+            IDSala: dados.sala,
+            Nome: dados.nome,
+            Capacidade: dados.capacidade
+        },
+            {
+                where: { IDSala: id }
+            });
+
+        res.redirect('/');
+    },
+
     async alunos(req, res) {
 
         // Recebendo o id da URL
