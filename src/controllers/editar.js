@@ -7,11 +7,8 @@ const sala = require('../model/sala');
 const fs = require('fs');
 
 module.exports = {
-    async salas(req, res) {
+    async salasE(req, res) {
         const parametro = req.params.id;
-
-        console.log(parametro)
-
         const salas = await sala.findByPk(parametro, {
             raw: true,
             attributes: ['IDSala', 'Nome', 'Capacidade']
