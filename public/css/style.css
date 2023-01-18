@@ -68,6 +68,9 @@ a:active {
     width: 15rem;
     border-color: #034C8C;
     background-color: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
@@ -84,7 +87,14 @@ a:active {
 .qtd {
     justify-content: end;
     padding: 1em 2em 0 2em;
-    display: grid;
+    display: flex;
+    align-items: center
+}
+
+.qtd-b {
+    justify-content: end;
+    padding: 1em 2em 0 2em;
+    display: flex;
 
 }
 
@@ -237,7 +247,21 @@ main {
 .btn {
     border-color: #005691;
     color: #005691;
+    border-radius: 10px;
+    margin: 0.2rem;
 }
+
+.btn-sala {
+    border-color: #005691;
+    color: #005691;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    height: 1.7rem;
+    margin:  0 0.1rem;
+}
+
 
 .custom-select {
     display: flex;
@@ -277,4 +301,8 @@ main {
 #cadastroSala {
     width: 40%;
     margin: 2px 30% 2px 30%;
+}
+
+.p-3 {
+    font-weight: 400;
 }

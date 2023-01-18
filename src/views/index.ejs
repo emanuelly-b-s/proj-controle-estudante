@@ -41,22 +41,30 @@
         </div>
     </nav>
     <div class="qtd">
-        <label class="custom-select">Sala</label>
+        <label class="p-3 text-dark" style="font-size: 1.2rem;">Sala: </label>
         <form action="/" method="post">
             <select id="sala" onchange="this.form.submit()" name="nome" class="custom-option">
-                <option name="qtd_option" value="" selected>Selecione</option>
+                <option name="qtd_option" value=" " selected>Selecione</option>
                 <% for (let i=0; i< salas.length; i++) { %>
-                    <option value='<%=salas[i].IDSala %>' <%=id==salas[i].IDSala ? 'selected' : '' %>>
+                    <option value='<%=salas[i].IDSala %>' <%=id==salas[i].IDSala ? 'selected' : ' ' %>>
                         <%= salas[i].Nome %>
                     </option>
                     <% } %>
             </select>
         </form>
-    </div>
-    <div class="qtd">
-        <form action="editarSala/<%= salas.IDSala %>" method="get" id="edit">
-            <input type="submit" class="btn btn-outline-dark" value="Editar">
+        <span class="p-3 text-dark">Qtd Alunos: <%= alunos.length %></span>
+        <form action="editarSala/<%= id %>" method="get" id="edit">
+            <input type="submit" class="btn btn-sala btn-outline-dark"  value="Editar">
         </form>
+        <form action="excluirSala/<%= id %>" method="post" id="edit">
+            <input type="submit" class="btn btn-sala btn-outline-dark"  value="Excluir">
+        </form>
+    </div>
+    </div>
+
+    <div class="qtd-b">
+
+
     </div>
     <main id="main">
         <% for (let i=0; i < alunos.length; i++) { %>
@@ -77,6 +85,10 @@
                     <div class="card-footer text-muted">
                         <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get" id="edit">
                             <input type="submit" class="btn btn-outline-dark" value="Editar">
+                            </input>
+                        </form>
+                        <form action="/excluirAluno/<%= alunos[i].IDAluno %>" method="post" id="edit">
+                            <input type="submit" class="btn btn-outline-dark" value="Excluir">
                             </input>
                         </form>
                     </div>

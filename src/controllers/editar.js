@@ -13,8 +13,10 @@ module.exports = {
             raw: true,
             attributes: ['IDSala', 'Nome', 'Capacidade']
         });
-        res.render('../views/editsala', { salas });
+
+        res.render('../views/editSala', {salas});
     },
+
 
     async editSala(req, res) {
 
@@ -33,6 +35,16 @@ module.exports = {
         res.redirect('/');
     },
 
+    async apagarSala(req,res)
+    {
+        const id = req.params.id;
+        sala.destroy(
+            { 
+                where: { IDSala : id } 
+            })
+        res.redirect("/")
+    },
+
     async alunos(req, res) {
 
         // Recebendo o id da URL
@@ -47,6 +59,16 @@ module.exports = {
 
         res.render('../views/editaluno', { salas, alunos, id: '' });
 
+    },
+
+    async apagarAluno(req,res)
+    {
+        const id = req.params.id;
+        aluno.destroy(
+            { 
+                where: { IDAluno : id } 
+            })
+        res.redirect("/")
     },
 
     async adicionar(req, res) {

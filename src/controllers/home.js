@@ -11,17 +11,20 @@ module.exports = {
 
     },
     async pagInicialPost(req, res) {
-        console.log("POST home")
-
         const id = req.body.nome;
+        
         const alunos = await aluno.findAll({
             raw: true,
             attributes: ['IDAluno', 'Nome', 'Idade', 'Foto'],
             where: { IDSala: id }
         });
         const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
+
+
         res.render('../views/index', { salas, alunos, id });
-    },
+
+
+    }
 
 
 }

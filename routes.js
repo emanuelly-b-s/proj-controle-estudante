@@ -38,4 +38,11 @@ route.post('/editarAluno/:id', multer(config).single('foto'), editar.adicionar);
 route.get('/editarSala/:id', editar.salasE);
 route.post('/editarSala/:id', editar.editSala);
 
+route.get('/excluirSala/:id', editar.salasE);
+route.post('/excluirSala/:id', editar.apagarSala);
+
+route.get('/excluirAluno/:id', editar.alunos);
+route.post('/excluirAluno/:id', editar.apagarAluno);
+
+
 module.exports = route;
