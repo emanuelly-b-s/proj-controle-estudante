@@ -1,5 +1,6 @@
 const sala = require('../model/sala');
 const aluno = require('../model/aluno');
+const { getAge } = require("../../public/js/getAge")
 
 module.exports = {
     async pagInicialGet(req, res) {
@@ -16,14 +17,19 @@ module.exports = {
 
         const alunos = await aluno.findAll({
             raw: true,
-            attributes: ['IDAluno', 'Nome', 'Idade', 'Foto'],
+            attributes: ['IDAluno', 'Nome', 'DataNascimento', 'Foto'],
             where: { IDSala: id }
         });
 
-        const salaSelecionada = await sala.findByPk(id, {raw: true, attributes: ['IDSala', 'Nome', 'Capacidade']})
+        const salaSelecionada = await sala.findByPk(id, {raw: true, attributes: ['IDSala', 'Nome', 'Capacidade']});
+
+        alunosIdade = alunos.map(a => {
+            a.DataNascimento = getAge(a.DataNascimento)
+            return a
+        });
 
 
-        res.render('../views/index', { salas, alunos, id, salaSelecionada });
+        res.render('../views/index', { salas, alunos, id, salaSelecionada, alunosIdade });
 
 
     }

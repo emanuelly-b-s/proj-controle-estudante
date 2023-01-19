@@ -12,8 +12,8 @@ const aluno = database.define("Aluno", {
         type: Sequelize.STRING(100),
         allowNull: false,
     },
-    Idade: {
-        type: Sequelize.INTEGER,
+    DataNascimento: {
+        type: Sequelize.DATEONLY,
         allowNull: false,
     },
     Sexo: {

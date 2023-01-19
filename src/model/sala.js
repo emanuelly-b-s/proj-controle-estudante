@@ -17,6 +17,14 @@ const sala = database.define("Sala", {
         type: Sequelize.INTEGER,
         allowNull: false,
     },
+    IdadeMin: {
+        type: Sequelize.INTEGER,
+        allowNull: false,
+    },
+    IdadeMax: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+    }
 });
 // Exportando essa tabela
 module.exports = sala;

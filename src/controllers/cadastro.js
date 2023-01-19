@@ -56,7 +56,7 @@ module.exports = {
         // Criando aluno no banco de dados
         await aluno.create({
             Nome: dados.nome,
-            Idade: dados.idade,
+            DataNascimento: dados.dataNascimento,
             Sexo: dados.sexo,
             IDSala: dados.sala,
             Foto: foto
