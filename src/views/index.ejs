@@ -44,67 +44,65 @@
         <label class="p-3 text-dark" style="font-size: 1.2rem;">Sala: </label>
         <form action="/" method="post">
             <select id="sala" onchange="this.form.submit()" name="nome" class="custom-option">
-                <option name="qtd_option" value=" " selected>Selecione</option>
+                <option name="qtd_option" value='' selected>Selecione</option>
                 <% for (let i=0; i< salas.length; i++) { %>
-                    <option value='<%=salas[i].IDSala %>' <%=id==salas[i].IDSala ? 'selected' : ' ' %>>
+                    <option value='<%=salas[i].IDSala %>' <%=id==salas[i].IDSala ? 'selected' : '' %>>
                         <%= salas[i].Nome %>
                     </option>
                     <% } %>
             </select>
         </form>
-        <span class="p-3 text-dark">Qtd Alunos: <%= alunos.length %></span>
-        <form action="editarSala/<%= id %>" method="get" id="edit">
-            <input type="submit" class="btn btn-sala btn-outline-dark"  value="Editar">
-        </form>
-        <form action="excluirSala/<%= id %>" method="post" id="edit">
-            <input type="submit" class="btn btn-sala btn-outline-dark"  value="Excluir">
-        </form>
+        <% if (id !='' ) { %>
+            <span class="p-3 text-dark">Capacidade: <%= alunos.length %> / <%= salaSelecionada.Capacidade %></span>
+            <form action="editarSala/<%= id %>" method="get" id="edit">
+                <input type="submit" class="btn btn-sala btn-outline-dark" value="Editar">
+            </form>
+            <form action="excluirSala/<%= id %>" method="post" id="edit">
+                <input type="submit" class="btn btn-sala btn-outline-dark" value="Excluir">
+            </form>
     </div>
-    </div>
-
-    <div class="qtd-b">
-
-
-    </div>
-    <main id="main">
-        <% for (let i=0; i < alunos.length; i++) { %>
-            <div class="row">
-                <div class="card card-dash text-center border-light mb-3 ml-4 shadow col-sm-2">
-                    <img src="img/<%= alunos[i].Foto %>" class="card-img-top">
-                    <div class="card-body">
-                        <h5 class="card-text">
-                            <%= alunos[i].Nome %>
-                        </h5>
-                        <h6 class="card-text">
-                            <%= alunos[i].Idade %>
-                        </h6>
-                        <p class="card-text">
-                            <%= alunos[i].Sexo %>
-                        </p>
-                    </div>
-                    <div class="card-footer text-muted">
-                        <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get" id="edit">
-                            <input type="submit" class="btn btn-outline-dark" value="Editar">
-                            </input>
-                        </form>
-                        <form action="/excluirAluno/<%= alunos[i].IDAluno %>" method="post" id="edit">
-                            <input type="submit" class="btn btn-outline-dark" value="Excluir">
-                            </input>
-                        </form>
+    <% } %>
+        </div>
+        <div class="qtd-b">
+        </div>
+        <main id="main">
+            <% for (let i=0; i < alunos.length; i++) { %>
+                <div class="row">
+                    <div class="card card-dash text-center border-light mb-3 ml-4 shadow col-sm-2">
+                        <img src="img/<%= alunos[i].Foto %>" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-text">
+                                <%= alunos[i].Nome %>
+                            </h5>
+                            <h6 class="card-text">
+                                <%= alunos[i].Idade %>
+                            </h6>
+                            <p class="card-text">
+                                <%= alunos[i].Sexo %>
+                            </p>
+                        </div>
+                        <div class="card-footer text-muted">
+                            <form action="/editarAluno/<%= alunos[i].IDAluno %>" method="get" id="edit">
+                                <input type="submit" class="btn btn-outline-dark" value="Editar">
+                                </input>
+                            </form>
+                            <form action="/excluirAluno/<%= alunos[i].IDAluno %>" method="post" id="edit">
+                                <input type="submit" class="btn btn-outline-dark" value="Excluir">
+                                </input>
+                            </form>
+                        </div>
                     </div>
                 </div>
+                <% } %>
+        </main>
+        <div class="footer" id="footer">
+            <div class="container-fluid">
+                <span class="textgradient">Bosch</span>
+                <span>Engineering</span>
+                <span>Technical School </span>
             </div>
-            <% } %>
-    </main>
-    <div class="footer" id="footer">
-        <div class="container-fluid">
-            <span class="textgradient">Bosch</span>
-            <span>Engineering</span>
-            <span>Technical School </span>
         </div>
-    </div>
-    <script src="js/pop.js"></script>
-
+        <script src="js/pop.js"></script>
 </body>
 
 </html>

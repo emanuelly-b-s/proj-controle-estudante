@@ -88,7 +88,8 @@ a:active {
     justify-content: end;
     padding: 1em 2em 0 2em;
     display: flex;
-    align-items: center
+    align-items: center;
+    margin-right: 1rem;
 }
 
 .qtd-b {

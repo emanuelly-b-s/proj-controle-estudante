@@ -21,10 +21,24 @@ module.exports = {
         // Encontrando todas as salas disponíveis no SQL
         const salas = await sala.findAll({
             raw: true, // Retorna somente os valores de uma tabela, sem os metadados.
-            attributes: ["IDSala", "Nome"],
+            attributes: ["IDSala", "Nome", "Capacidade"],
         });
+
+        var shouldDisable = []
+        for(var s of salas) {
+            const qtdAlunos = await aluno.count({
+                where: { IDSala: s.IDSala}
+            })
+
+            if(qtdAlunos >= s.Capacidade) {
+                shouldDisable.push('disabled')
+            } else {
+                shouldDisable.push('')
+            }
+        }
+
         // Renderizando e passando o nome das salas para o front
-        res.render("../views/cadastrar_aluno", { salas });
+        res.render("../views/cadastrar_aluno", { salas, shouldDisable });
     },
     async alunoInsert(req, res) {
         // Recebendo as informações pelo Body
