@@ -327,3 +327,10 @@ main {
 .p-3 {
     font-weight: 400;
 }
+
+.idade{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
