@@ -26,7 +26,9 @@ module.exports = {
         await sala.update({
             IDSala: dados.sala,
             Nome: dados.nome,
-            Capacidade: dados.capacidade
+            Capacidade: dados.capacidade,
+            IdadeMin: dados.idadeMin,
+            IdadeMax: dados.idadeMax
         },
             {
                 where: { IDSala: id }
@@ -52,7 +54,7 @@ module.exports = {
 
         const alunos = await aluno.findByPk(parametro, {
             raw: true, //Retorna os somente os valores de uma tabela, sem os metadados
-            attributes: ['IDAluno', 'Nome', 'Idade', 'Sexo', 'Foto', 'IDSala']
+            attributes: ['IDAluno', 'Nome', 'DataNascimento', 'Sexo', 'Foto', 'IDSala']
         });
 
         const salas = await sala.findAll({ raw: true, attributes: ['IDSala', 'Nome'] });
@@ -101,7 +103,7 @@ module.exports = {
         // Dando upgrade nas informações novas
         await aluno.update({
             Nome: dados.nome,
-            Idade: dados.idade,
+            DataNascimento: dados.dataNascimento,
             Sexo: dados.sexo,
             IDSala: dados.sala
         },

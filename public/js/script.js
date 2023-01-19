@@ -19,3 +19,13 @@ file.addEventListener('change', () => {
         photo.src = reader.result
     }
 });
+
+const showPopup = (e, warning, sucess) => {
+    if (!window.confirm(warning)) {
+        e.preventDefault()
+        return
+    } 
+    alert(sucess)
+}
+
+

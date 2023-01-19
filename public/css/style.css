@@ -20,6 +20,16 @@ body {
 
 }
 
+.col-12 {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    margin: 1rem auto 0 auto;
+}
+
 .textgradient {
     display: inline;
     background: linear-gradient(to right, #D91424, #8C3A87, #034C8C, #04C4D9, #03A65A);
@@ -71,6 +81,7 @@ a:active {
     display: flex;
     justify-content: center;
     align-items: center;
+    word-break: break-word;
 }
 
 
@@ -166,6 +177,10 @@ main {
     padding: 0;
 }
 
+.card-text {
+    word-break: break-all;
+}
+
 #card {
     margin: 2%;
 }
@@ -201,8 +216,9 @@ main {
 
 #foto img {
     border-radius: 50%;
-    width: 17em;
-    height: 17em;
+    width: 15em;
+    height: 15em;
+    margin: 1rem 0 0 0;
 }
 
 
@@ -214,9 +230,9 @@ main {
     margin-top: 2em;
     width: 15em;
     height: 15em;
-    border: double 2.5px transparent;
+    border: double 6.5px transparent;
     border-radius: 50%;
-    background-image: linear-gradient(#D91424, #D91424), radial-gradient(circle at top right, #D91424, #8C3A87, #005691, #04C4D9, #03A65A);
+    background-image: linear-gradient(white, white), radial-gradient(circle at left, #D91424, #8C3A87, #034C8C, #04C4D9, #03A65A);
     background-origin: border-box;
     background-clip: padding-box, border-box;
 
@@ -231,12 +247,16 @@ main {
 }
 
 .editAluno {
-    display: flex;
-    margin: 1% 2% 2% 2%;
-    align-items: center;
-    justify-content: center;
+    word-break: break-all;
     text-align: center;
     background-color: #FFFFFF;
+    margin: auto;
+    border: double 4.5px transparent;
+    border-radius: 1rem;
+    background-image: image(u), radial-gradient(circle at left, #D91424, #8C3A87, #034C8C, #04C4D9, #03A65A);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 1rem;
 
 }
 
@@ -260,7 +280,7 @@ main {
     align-items: center;
     padding-top: 0;
     height: 1.7rem;
-    margin:  0 0.1rem;
+    margin: 0 0.1rem;
 }
 
 

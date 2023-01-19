@@ -13,6 +13,8 @@ module.exports = {
         await sala.create({
             Nome: dados.nome,
             Capacidade: dados.capacidade,
+            IdadeMin: dados.idadeMin,
+            IdadeMax: dados.idadeMax
         });
         // Redirecionar para a página principal
         res.redirect("/");
